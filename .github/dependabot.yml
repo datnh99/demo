@@ -20,4 +20,4 @@ updates:
         exclude-patterns:
           - "org.springframework.boot:*"
           - "org.springframework.data:*"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 9
