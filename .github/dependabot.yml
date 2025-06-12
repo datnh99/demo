@@ -4,9 +4,9 @@ updates:
     directory: "/"
     schedule:
       interval: weekly
-      day: monday
+      day: tuesday
       time: "07:00"
       timezone: Europe/Berlin
     commit-message:
       prefix: "build:"
-    open-pull-requests-limit: 12
+    open-pull-requests-limit: 10
