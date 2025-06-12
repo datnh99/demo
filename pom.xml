@@ -45,7 +45,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-			<version>3.3.12</version>
+			<version>3.5.0</version>
 		</dependency>
 	</dependencies>
 
