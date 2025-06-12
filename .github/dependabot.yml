@@ -9,4 +9,4 @@ updates:
       timezone: Europe/Berlin
     commit-message:
       prefix: "build:"
-    open-pull-requests-limit: 4
+    open-pull-requests-limit: 3
