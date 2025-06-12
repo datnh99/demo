@@ -20,4 +20,9 @@ updates:
         exclude-patterns:
           - "org.springframework.boot:*"
           - "org.springframework.data:*"
+    ignore:
+      - dependency-name: "org.springframework.boot:*"
+        update-types: [ "version-update:semver-minor" ]
+      - dependency-name: "org.springframework.data:*"
+        update-types: [ "version-update:semver-minor" ]
     open-pull-requests-limit: 9
