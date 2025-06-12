@@ -9,4 +9,15 @@ updates:
       timezone: Europe/Berlin
     commit-message:
       prefix: "build:"
-    open-pull-requests-limit: 4
+    groups:
+      spring-boot-dependencies:
+        patterns:
+          - "org.springframework.boot:*"
+          - "org.springframework.data:*"
+      spring-dependencies:
+        patterns:
+          - "org.springframework*"
+        exclude-patterns:
+          - "org.springframework.boot:*"
+          - "org.springframework.data:*"
+    open-pull-requests-limit: 10
