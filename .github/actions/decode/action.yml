@@ -22,7 +22,7 @@ runs:
       shell: bash
       run: |
         echo "Danh sách file trong thư mục secrets:"
-        find testdata/trusted_client_certificates -type f
+        find testdata/trusted_client_certificates/secrets -type f
 
     - name: Print first 3 lines of e2e-report-monitor.txt if it exists
       shell: bash
