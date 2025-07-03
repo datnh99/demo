@@ -14,9 +14,10 @@ runs:
     - name: Set up certificate
       shell: bash
       run: |
-        mkdir -p testdata/trusted_client_certificates/secrets && cd testdata/trusted_client_certificates
+        mkdir -p testdata/trusted_client_certificates/secrets && cd testdata/trusted_client_certificates/secrets
         echo "${{ inputs.trustedClientCertificateBase64 }}" | base64 -d > credentials.tar.gz
-        tar -xzf credentials.tar.gz -C testdata/trusted_client_certificates/secrets
+        tar -xzf credentials.tar.gz -C secrets
+        rm -f credentials.tar.gz
 
     - name: List extracted files
       shell: bash
