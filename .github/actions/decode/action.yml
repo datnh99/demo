@@ -15,7 +15,7 @@ runs:
       shell: bash
       run: |
         mkdir -p testdata/trusted_client_certificates && cd testdata/trusted_client_certificates
-        echo "${{ secrets.CREDENTIALS_B64 }}" | base64 -d > secrets/credentials.tar.gz
+        echo "${{ inputs.trustedClientCertificateBase64 }}" | base64 -d > secrets/credentials.tar.gz
         tar -xzf secrets/credentials.tar.gz -C secrets
 
     - name: List extracted files
