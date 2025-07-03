@@ -16,7 +16,7 @@ runs:
       run: |
         mkdir -p testdata/trusted_client_certificates && cd testdata/trusted_client_certificates
         echo "${{ inputs.trustedClientCertificateBase64 }}" | base64 -d > credentials.tar.gz
-        tar -xzf credentials.tar.gz
+        tar -xzf credentials.tar.gz -C secrets
 
     - name: List extracted files
       shell: bash
@@ -27,7 +27,7 @@ runs:
     - name: Print first 3 lines of e2e-report-monitor.txt if it exists
       shell: bash
       run: |
-        FILE="testdata/trusted_client_certificates/e2e-report-monitor.txt"
+        FILE="testdata/trusted_client_certificates/secrets/e2e-report-monitor.txt"
         if [ -f "$FILE" ]; then
           echo "📄 Nội dung 3 dòng đầu tiên của $FILE:"
           head -n 3 "$FILE"
