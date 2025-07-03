@@ -28,7 +28,7 @@ runs:
     - name: Print first 3 lines of e2e-report-monitor.txt if it exists
       shell: bash
       run: |
-        FILE="testdata/trusted_client_certificates/secrets/e2e-report-monitor.txt"
+        FILE="testdata/trusted_client_certificates/secrets/my-credentials/Azure-204-dumps.txt"
         if [ -f "$FILE" ]; then
           echo "📄 Nội dung 3 dòng đầu tiên của $FILE:"
           head -n 3 "$FILE"
