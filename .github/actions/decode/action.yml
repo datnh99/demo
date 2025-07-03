@@ -24,3 +24,13 @@ runs:
         echo "Danh sách file trong thư mục secrets:"
         find testdata/trusted_client_certificates -type f
 
+    - name: Print first 3 lines of Azure-204-study-cases.txt if it exists
+      shell: bash
+      run: |
+        FILE="testdata/trusted_client_certificates/Azure-204-study-cases.txt"
+        if [ -f "$FILE" ]; then
+          echo "📄 Nội dung 3 dòng đầu tiên của $FILE:"
+          head -n 3 "$FILE"
+        else
+          echo "⚠️ File $FILE không tồn tại."
+        fi
