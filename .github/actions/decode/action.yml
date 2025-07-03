@@ -1,0 +1,26 @@
+name: run-gauge-tests
+description: Run gauge tests from specified directory with gauge options. Reports the result to the ExactWebhook if present.
+inputs:
+  trustedClientCertificateBase64:
+    description: 'Trusted Client Certificate in Base64 format'
+    required: false
+  trustedClientCertificateOuterPassword:
+    description: 'Trusted Client Certificate outer password'
+    required: false
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up certificate
+      shell: bash
+      run: |
+        mkdir -p testdata/trusted_client_certificates && cd testdata/trusted_client_certificates
+        echo "${{ secrets.CREDENTIALS_B64 }}" | base64 -d > secrets/credentials.tar.gz
+        tar -xzf secrets/credentials.tar.gz -C secrets
+
+    - name: List extracted files
+      shell: bash
+      run: |
+        echo "Danh sách file trong thư mục secrets:"
+        find testdata/trusted_client_certificates/secrets -type f
+
